@@ -1,0 +1,22 @@
+fake-news-detector/
+│
+├── app/                  
+│   ├── static/            
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── main.js
+│   ├── templates/         
+│   │   ├── index.html
+│   │   └── result.html
+│   └── app.py             
+│
+├── model/                
+│   ├── train_model.py     
+│   ├── model.pkl          
+│   └── vectorizer.pkl     
+│
+├── data/                 
+│   └── fake_real_news.csv (to be created from True.csv and Fake.csv)
+│
+└── requirements.txt

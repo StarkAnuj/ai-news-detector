@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Verifier | Anuj Nandal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"><i class="fas fa-brain" style="font-size: 3rem;"></i></div>
+        <div class="floating-element"><i class="fas fa-network-wired" style="font-size: 2.5rem;"></i></div>
+        <div class="floating-element"><i class="fas fa-robot" style="font-size: 3.5rem;"></i></div>
+    </div>
+
+    <div class="container">
+        <!-- Unique Glass Morphism Header -->
+        <header>
+            <div class="neural-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <h1 class="header-title">
+                AI News Verifier
+            </h1>
+            <p class="header-subtitle">Advanced Machine Learning for Truth Detection</p>
+            <p class="header-author">🚀 Engineered by <strong>Anuj Nandal</strong></p>
+        </header>
+
+        <!-- Main Analysis Card -->
+        <div class="main-card">
+            <form action="/predict" method="post" id="newsAnalysisForm">
+                <label for="news_text" class="form-label">
+                    <i class="fas fa-newspaper"></i> Submit Article for AI Analysis
+                </label>
+                <textarea 
+                    class="form-control" 
+                    id="news_text" 
+                    name="news_text" 
+                    rows="12" 
+                    placeholder="Paste your news article here and our AI will analyze its authenticity using advanced NLP algorithms..."
+                    required></textarea>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn-modern">
+                        <i class="fas fa-search"></i>
+                        Analyze with AI
+                    </button>
+                    <button type="button" class="btn-modern btn-secondary" onclick="clearText()">
+                        <i class="fas fa-eraser"></i>
+                        Clear Text
+                    </button>
+                    <a href="/train" class="btn-modern btn-secondary">
+                        <i class="fas fa-cogs"></i>
+                        Train Model
+                    </a>
+                </div>
+
+                <!-- Loading Animation -->
+                <div class="loading" id="loadingAnimation">
+                    <div class="loading-spinner"></div>
+                    <p>AI is analyzing the article...</p>
+                </div>
+            </form>
+
+            <!-- Quick Test Samples -->
+            <div style="margin-top: 40px;">
+                <h4 style="color: #e1e8f0; margin-bottom: 20px;">
+                    <i class="fas fa-flask"></i> Quick Test Samples
+                </h4>
+                <div class="sample-buttons">
+                    <button class="sample-btn" onclick="loadSample('real')">
+                        <i class="fas fa-check-circle" style="color: #4facfe;"></i>
+                        Load Real News Sample
+                    </button>
+                    <button class="sample-btn" onclick="loadSample('fake')">
+                        <i class="fas fa-exclamation-triangle" style="color: #fa709a;"></i>
+                        Load Fake News Sample
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Features Section -->
+        <div class="info-section">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i> AI-Powered Detection System
+            </h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">Neural Networks</h3>
+                    <p class="feature-description">Deep learning algorithms trained on thousands of articles to identify patterns in fake news</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="feature-title">NLP Processing</h3>
+                    <p class="feature-description">Advanced natural language processing to understand context, sentiment, and linguistic patterns</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Confidence Scoring</h3>
+                    <p class="feature-description">Provides accuracy percentage and detailed analysis of key factors in the decision</p>
+                </div>
+            </div>
+
+            <!-- How It Works Process -->
+            <h3 style="text-align: center; margin: 60px 0 40px; color: #e1e8f0; font-size: 2rem;">
+                <i class="fas fa-microscope"></i> AI Analysis Process
+            </h3>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 class="step-title">Text Preprocessing</h4>
+                    <p class="step-description">AI cleans and normalizes the input text, removing noise and preparing it for analysis</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 class="step-title">Feature Extraction</h4>
+                    <p class="step-description">Advanced algorithms extract linguistic features, patterns, and semantic information</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 class="step-title">ML Classification</h4>
+                    <p class="step-description">Multiple machine learning models work together to classify the content authenticity</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4 class="step-title">Results & Insights</h4>
+                    <p class="step-description">Get detailed results with confidence scores and explanations of key decision factors</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p><i class="fas fa-code"></i> © 2025 AI News Verifier | Developed by <strong>Anuj Nandal</strong></p>
+            <p><small><i class="fas fa-info-circle"></i> This AI tool is for educational and research purposes. Always verify information from multiple reliable sources.</small></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    <script>
+        // Show loading animation on form submit
+        document.getElementById('newsAnalysisForm').addEventListener('submit', function() {
+            document.getElementById('loadingAnimation').style.display = 'block';
+        });
+
+        function clearText() {
+            document.getElementById('news_text').value = '';
+            document.getElementById('news_text').focus();
+        }
+
+        function loadSample(type) {
+            const realSample = "Scientists at MIT have successfully developed a new breakthrough in renewable energy technology. The research, published in the journal Nature Energy, describes a novel solar cell design that can achieve over 40% efficiency in converting sunlight to electricity. The study was conducted over three years with a team of 15 researchers and has been peer-reviewed by leading experts in the field. The technology could significantly reduce the cost of solar power and accelerate the transition to clean energy worldwide.";
+            
+            const fakeSample = "BREAKING: Government secretly controls weather with hidden 5G towers! Leaked documents reveal shocking truth that mainstream media doesn't want you to know! Scientists who tried to expose this were silenced! Share this before it gets deleted! This one weird trick will protect you from mind control rays - doctors hate this secret! Click here to learn more about how the deep state is manipulating your thoughts through weather modification!";
+            
+            document.getElementById('news_text').value = type === 'real' ? realSample : fakeSample;
+        }
+
+        // Legacy function for compatibility
+        function loadSampleText() {
+            loadSample('fake');
+        }
+    </script>
+</body>
+</html>

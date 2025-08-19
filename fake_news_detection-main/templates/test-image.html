@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .image-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            max-width: 500px;
+        }
+        img {
+            max-width: 100%;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <div class="image-container">
+        <h2>Project 1 Image</h2>
+        <img src="{{ url_for('static', filename='images/project1.jpg') }}" 
+             alt="Project 1" 
+             onerror="document.getElementById('project1-status').innerHTML='ERROR: Image failed to load'; this.onerror=null; this.src='{{ url_for('static', filename='images/project-placeholder.jpg') }}'">
+        <p id="project1-status" class="success">Loading...</p>
+        <script>
+            document.querySelector('img').onload = function() {
+                if (this.src.includes('project1.jpg')) {
+                    document.getElementById('project1-status').innerHTML = 'SUCCESS: Image loaded correctly';
+                } else {
+                    document.getElementById('project1-status').innerHTML = 'WARNING: Using placeholder image';
+                    document.getElementById('project1-status').className = 'error';
+                }
+            }
+        </script>
+    </div>
+    
+    <h2>Debugging Tips:</h2>
+    <ul>
+        <li>Make sure image files exist in the static/images folder</li>
+        <li>Check file permissions</li>
+        <li>Ensure filenames match exactly (including case)</li>
+        <li>Try adding another test image to see if it works</li>
+    </ul>
+</body>
+</html>

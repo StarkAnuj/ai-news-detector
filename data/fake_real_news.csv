@@ -1,0 +1,11 @@
+title,text,subject,date,label
+Real News 0,The president announced new economic policies during today's press conference. The new measures are expected to boost employment rates.,politics,2024-01-01,1
+Real News 2,The stock market closed higher today after positive earnings reports from major tech companies. Investors showed confidence in the market.,business,2024-01-01,1
+Fake News 2,SHOCKING: Celebrity spotted doing something completely normal! You won't believe what happened next!,celebrity,2024-01-01,0
+Real News 1,Scientists at MIT have developed a new technology that could revolutionize renewable energy production. The research was published in Nature journal.,science,2024-01-01,1
+Real News 3,Local authorities have announced plans to improve public transportation in the city. The project will begin next month.,local,2024-01-01,1
+Fake News 1,Miracle cure found! This one weird trick will make you lose 50 pounds in a week! Doctors hate this secret!,health,2024-01-01,0
+Real News 4,A new study shows that regular exercise can significantly improve mental health. The research involved 1000 participants over two years.,health,2024-01-01,1
+Fake News 3,Government plans to control your mind with 5G towers! Here's how to protect yourself with aluminum foil!,technology,2024-01-01,0
+Fake News 0,BREAKING: Aliens have landed in Area 51 and the government is hiding it from us! Secret documents revealed shocking truth!,conspiracy,2024-01-01,0
+Fake News 4,Scientists discover that drinking water is actually dangerous! Big pharma doesn't want you to know this!,health,2024-01-01,0
